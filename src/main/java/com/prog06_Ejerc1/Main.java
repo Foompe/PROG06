@@ -23,32 +23,50 @@ public class Main {
                     " 9. Salir");
 
             //lanzamos escaner
-
+            Vehiculo coche = new Vehiculo();
             int eleccion = sc.nextInt();
             switch (eleccion) {
                 case 1:
-                    System.out.println("\nHas seleccionado nuevo vehiculo");
+                    System.out.println("\nHas seleccionado nuevo vehiculo\n" +
+                            "Introduce nombre de la marca: ");
+                    String marca = sc.nextLine();
+                    coche.setMarca(marca);
+
+
+
+
                     break;
                 case 2:
-                    System.out.println("\nHas seleccionado ver matricula");
+                    System.out.println("\nHas seleccionado ver matricula\n" +
+                            "La matricula es: " + coche.getMatricula());
                     break;
                 case 3:
-                    System.out.println("\nHas seleccionado ver numero kilometros");
+                    System.out.println("\nHas seleccionado ver numero kilometros\n" +
+                            "Tiene " + coche.getnKm() + " Km.");
                     break;
                 case 4:
-                    System.out.println("\nHas seleccionado actualizar Kilometros");
+                    System.out.println("Introduce los nuevos Km:" + "\nHas seleccionado actualizar Kilometros\n");
+                    int km = sc.nextInt();
+                    coche.setnKm(km);
+                    System.out.println("\nHas actualizado los km a: " + coche.getnKm() + " Km");
                     break;
                 case 5:
-                    System.out.println("\nHas seleccionado ver años antigúedad");
+                    System.out.println("\nHas seleccionado ver años antigúedad\n" +
+                            "El coche " + coche.getMarca() + " tiene " + coche.get_Anios() + " años de antigúedad");
                     break;
                 case 6:
-                    System.out.println("\nHas seleccionado mostrar propietario");
+                    System.out.println("\nHas seleccionado mostrar propietario\n" +
+                            "El propietario se llama: " + coche.getNombrePropietario() + "\n" +
+                            "DNI: " + coche.getDNI());
                     break;
                 case 7:
-                    System.out.println("\nHas seleccionado mostrar descripción");
+                    //debo crear un metodo para esto?
+                    System.out.println("\nHas seleccionado mostrar descripción\n" +
+                            coche.Descripcion());
                     break;
                 case 8:
-                    System.out.println("\nHas seleccionado mostrar precio");
+                    System.out.println("\nHas seleccionado mostrar \n" +
+                            "El precio es: " + coche.getPrecio());
                     break;
                 case 9:
                     System.out.println("\nHas seleccionado salir");
