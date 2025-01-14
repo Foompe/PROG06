@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         //Inicio atributos
         boolean salir = true;
-
+        int km;
         //inicializamos el scanner
         Scanner sc = new Scanner (System.in);
         while (salir) {
@@ -32,8 +32,39 @@ public class Main {
                     String marca = sc.nextLine();
                     coche.setMarca(marca);
 
+                    System.out.println("Introduce matricula:");
+                    String matricula = sc.nextLine();
+                    coche.setMatricula(matricula);
 
+                    System.out.println("Introduce número de kilometros:");
+                    km= sc.nextInt();
+                    coche.setnKm(km);
 
+                    System.out.println("Indica la fecha de matriculación:\n" +
+                            "Día:");
+                    int dia = sc.nextInt();
+                    coche.setDia(dia);
+
+                    System.out.println("Mes:");
+                    int mes = sc.nextInt();
+                    coche.setMes(mes);
+
+                    System.out.println("Año:");
+                    int ano = sc.nextInt();
+                    coche.setAno(ano);
+
+                    System.out.println("Introduce el precio:");
+                    double precio = sc.nextDouble();
+                    coche.setPrecio(precio);
+
+                    System.out.println("Introduce el nombre del propietario:");
+                    String nombrePropietario = sc.nextLine();
+                    coche.setNombrePropietario(nombrePropietario);
+
+                    System.out.println("Introduce DNI del propietario (solo los numeros):");
+                    int dni = sc.nextInt();
+                    coche.setDNI(dni);
+                    System.out.println("La letra es: " + "Metodo para letra");
 
                     break;
                 case 2:
@@ -46,7 +77,7 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("Introduce los nuevos Km:" + "\nHas seleccionado actualizar Kilometros\n");
-                    int km = sc.nextInt();
+                    km = sc.nextInt();
                     coche.setnKm(km);
                     System.out.println("\nHas actualizado los km a: " + coche.getnKm() + " Km");
                     break;
@@ -60,7 +91,6 @@ public class Main {
                             "DNI: " + coche.getDNI());
                     break;
                 case 7:
-                    //debo crear un metodo para esto?
                     System.out.println("\nHas seleccionado mostrar descripción\n" +
                             coche.Descripcion());
                     break;

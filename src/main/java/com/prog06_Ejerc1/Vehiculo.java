@@ -10,7 +10,7 @@ public class Vehiculo {
     int mes;
     int ano;
     //descripcion (muestra marca, matricula y km)
-    int precio;
+    double precio;
     String nombrePropietario;
     int DNI;
 
@@ -81,11 +81,11 @@ public class Vehiculo {
         this.ano = ano;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
