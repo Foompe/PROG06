@@ -11,16 +11,17 @@ public class Main {
         Scanner sc = new Scanner (System.in);
         while (salir) {
             //Seleccion
-            System.out.println("Escoge una opción:\n" +
-                    " 1. Nuevo vehivulo\n" +
-                    " 2. Ver Matricula\n" +
-                    " 3. Ver número de Kilometros\n" +
-                    " 4. Actualizar Kilometros\n" +
-                    " 5. Ver años antigúedad\n" +
-                    " 6. Mosotrar propietario\n" +
-                    " 7. Mostrar descripción\n" +
-                    " 8. Mostrar precio\n" +
-                    " 9. Salir");
+            System.out.println("""
+                    Escoge una opción:
+                     1. Nuevo vehivulo
+                     2. Ver Matricula
+                     3. Ver número de Kilometros
+                     4. Actualizar Kilometros
+                     5. Ver años antigúedad
+                     6. Mosotrar propietario
+                     7. Mostrar descripción
+                     8. Mostrar precio
+                     9. Salir""");
 
             //lanzamos escaner
             Vehiculo coche = new Vehiculo();
@@ -28,7 +29,7 @@ public class Main {
             switch (eleccion) {
                 case 1:
                     System.out.println("\nHas seleccionado nuevo vehiculo\n" +
-                            "Introduce nombre de la marca: ");
+                            "Introduce nombre de la marca:");
                     String marca = sc.nextLine();
                     coche.setMarca(marca);
 
@@ -38,19 +39,23 @@ public class Main {
 
                     System.out.println("Introduce número de kilometros:");
                     km= sc.nextInt();
+                    sc.nextLine();
                     coche.setnKm(km);
 
                     System.out.println("Indica la fecha de matriculación:\n" +
                             "Día:");
                     int dia = sc.nextInt();
+                    sc.nextLine(); //esta sentencia es aparentemente obligatoria cuando pedimos un scanner despues de un int
                     coche.setDia(dia);
 
                     System.out.println("Mes:");
                     int mes = sc.nextInt();
+                    sc.nextLine();
                     coche.setMes(mes);
 
                     System.out.println("Año:");
                     int ano = sc.nextInt();
+                    sc.nextLine();
                     coche.setAno(ano);
 
                     System.out.println("Introduce el precio:");
@@ -61,10 +66,10 @@ public class Main {
                     String nombrePropietario = sc.nextLine();
                     coche.setNombrePropietario(nombrePropietario);
 
-                    System.out.println("Introduce DNI del propietario (solo los numeros):");
-                    int dni = sc.nextInt();
+                    System.out.println("Introduce DNI del propietario:");
+                    String dni = sc.nextInt();
                     coche.setDNI(dni);
-                    System.out.println("La letra es: " + "Metodo para letra");
+
 
                     break;
                 case 2:
@@ -76,18 +81,20 @@ public class Main {
                             "Tiene " + coche.getnKm() + " Km.");
                     break;
                 case 4:
-                    System.out.println("Introduce los nuevos Km:" + "\nHas seleccionado actualizar Kilometros\n");
+                    System.out.println("Introduce los nuevos Km:\nHas seleccionado actualizar Kilometros\n");
                     km = sc.nextInt();
                     coche.setnKm(km);
                     System.out.println("\nHas actualizado los km a: " + coche.getnKm() + " Km");
                     break;
                 case 5:
+
+                    //Pendiente de modificación. Debe mostrar solo los años de antiguedad
                     System.out.println("\nHas seleccionado ver años antigúedad\n" +
                             "El coche " + coche.getMarca() + " tiene " + coche.get_Anios() + " años de antigúedad");
                     break;
                 case 6:
                     System.out.println("\nHas seleccionado mostrar propietario\n" +
-                            "El propietario se llama: " + coche.getNombrePropietario() + "\n" +
+                            "Nombre propietario: " + coche.getNombrePropietario() + "\n" +
                             "DNI: " + coche.getDNI());
                     break;
                 case 7:

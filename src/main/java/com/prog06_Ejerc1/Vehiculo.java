@@ -12,11 +12,11 @@ public class Vehiculo {
     //descripcion (muestra marca, matricula y km)
     double precio;
     String nombrePropietario;
-    int DNI;
+    String DNI;
 
 
 
-    //Creamos un constructor
+    //Creamos un constructor (no haría falta ya que es igual que el predefinido
     public Vehiculo () {
 
     }
@@ -97,11 +97,11 @@ public class Vehiculo {
         this.nombrePropietario = nombrePropietario;
     }
 
-    public int getDNI() {
+    public String getDNI() {
         return DNI;
     }
 
-    public void setDNI(int DNI) {
+    public void setDNI(String DNI) {
         this.DNI = DNI;
     }
 }
